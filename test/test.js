@@ -129,6 +129,7 @@ describe('PacProxyAgent', function () {
 
   describe('"http" module', function () {
     it('should work over an HTTP proxy', function (done) {
+      this.timeout(5000);
       httpServer.once('request', function (req, res) {
         res.end(JSON.stringify(req.headers));
       });
@@ -156,6 +157,7 @@ describe('PacProxyAgent', function () {
     });
 
     it('should work over an HTTPS proxy', function (done) {
+      this.timeout(5000);
       httpServer.once('request', function (req, res) {
         res.end(JSON.stringify(req.headers));
       });
@@ -185,6 +187,7 @@ describe('PacProxyAgent', function () {
     });
 
     it('should work over a SOCKS proxy', function (done) {
+      this.timeout(5000);
       httpServer.once('request', function (req, res) {
         res.end(JSON.stringify(req.headers));
       });
@@ -215,6 +218,7 @@ describe('PacProxyAgent', function () {
 
   describe('"https" module', function () {
     it('should work over an HTTP proxy', function (done) {
+      this.timeout(5000);
       httpsServer.once('request', function (req, res) {
         res.end(JSON.stringify(req.headers));
       });
@@ -242,6 +246,7 @@ describe('PacProxyAgent', function () {
     });
 
     it('should work over an HTTPS proxy', function (done) {
+      this.timeout(5000);
       var gotReq = false;
       httpsServer.once('request', function (req, res) {
         gotReq = true;
@@ -274,6 +279,7 @@ describe('PacProxyAgent', function () {
     });
 
     it('should work over a SOCKS proxy', function (done) {
+      this.timeout(5000);
       var gotReq = false;
       httpsServer.once('request', function (req, res) {
         gotReq = true;
